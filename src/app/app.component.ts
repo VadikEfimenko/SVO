@@ -26,7 +26,7 @@ export class AppComponent {
 
   }
   arrivalrace() {
-    this.http.get('https://api.flightstats.com/flex/flightstatus/rest/v2/json/airport/status/SVO/arr/2019/1/9/18?appId=89314f21&appKey=414fe9eff2f3a95545eeb4470534a04b&utc=false&numHours=1&maxFlights=50')
+    this.http.get('https://api.flightstats.com/flex/flightstatus/rest/v2/json/airport/status/SVO/arr/2019/1/9/18?appId=89314f21&appKey=414fe9eff2f3a95545eeb4470534a04b&utc=false&numHours=1&maxFlights=10')
     .subscribe((response)=>{
       this.response = response;
 
@@ -75,8 +75,12 @@ export class AppComponent {
   }
   getTime(timeUTC: string) : string {
     let time = new Date(timeUTC);
-    return time.getUTCHours() + ':' + 
-           time.getUTCMinutes();
+    let hour : string = time.getUTCHours() + "";
+    let minutes : string = time.getUTCMinutes() + "";
+    hour = hour.length == 1 ? "0" + hour : hour;
+    minutes = minutes.length == 1 ? "0" + minutes : minutes;
+    
+    return hour + ':' + minutes;
   }
 
 }
