@@ -1,5 +1,5 @@
 <main>
-  <app-left-area (arrivalrace)="arrivalrace()" (departurerace)="departurerace()" (delayrace)="delayrace()"></app-left-area>
+  <app-left-area (searchRace)="searchRace($event)" (arrivalrace)="arrivalrace()" (departurerace)="departurerace()" (delayrace)="delayrace()"></app-left-area>
   <app-right-area [response]="response" [tableObjectArray]="tableObjectArray"></app-right-area>
 </main>
 

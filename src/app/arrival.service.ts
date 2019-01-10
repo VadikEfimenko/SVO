@@ -36,7 +36,6 @@ export class ArrivalService {
   getTableToInterface(res : any) : any {    
     let tableMain = []; 
     let tableAir : {[k: string]: string};
-    console.log(res)
     for (let val of res.flightStatuses) {  
       tableAir = {}; 
       tableAir.flightNumber = val.carrierFsCode + 
@@ -81,6 +80,4 @@ export class ArrivalService {
     
     return hour + ':' + minutes;
   }
-
-
 }

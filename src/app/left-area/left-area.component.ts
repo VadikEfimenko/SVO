@@ -6,9 +6,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./left-area.component.css']
 })
 export class LeftAreaComponent implements OnInit {
+  @Input() race: string;
   @Output() arrivalrace = new EventEmitter();
   @Output() departurerace = new EventEmitter();
   @Output() delayrace = new EventEmitter(); 
+  @Output() searchRace = new EventEmitter();
   constructor() { }
 
   onArrivalRace() {
@@ -21,5 +23,9 @@ export class LeftAreaComponent implements OnInit {
 
   onDelayRace() {
     this.delayrace.emit();
+  }
+
+  onSearchRace() {
+    this.searchRace.emit(this.race);
   }
 }

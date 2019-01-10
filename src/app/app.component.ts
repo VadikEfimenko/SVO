@@ -44,7 +44,21 @@ export class AppComponent {
     })
   }
 
-  searchDelay() {
+  searchRace(race : string) {
+    this.http.get( this.templateGet + '/arr/' + this.date + '?appId=' + this.appId + '&appKey=' + this.appKey + '&utc=true&numHours=1')
+    .subscribe((response)=>{
+      this.response = response;
+      this.tableObjectArray = this.arrival.getTableToInterface(this.response);
 
+      for (let val of this.tableObjectArray) {
+        if (race == val.flightNumber) {
+          this.tableObjectArray = [val];
+          break;
+        }
+      }
+      if (this.tableObjectArray.length() != 1) {
+        this.tableObjectArray = [];
+      }
+    })
   }
 }
