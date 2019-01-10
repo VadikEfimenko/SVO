@@ -25,4 +25,13 @@ export class AppComponent {
     })
   }
 
+  departurerace() {
+    this.http.get('https://api.flightstats.com/flex/flightstatus/rest/v2/json/airport/status/SVO/dep/2019/1/9/15?appId=89314f21&appKey=414fe9eff2f3a95545eeb4470534a04b&utc=false&numHours=1&maxFlights=10')
+    .subscribe((response)=>{
+      this.response = response;
+      this.tableObjectArray = this.arrival.getTableToInterface(this.response);
+    })
+  }
+  
+
 }

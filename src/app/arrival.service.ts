@@ -10,7 +10,6 @@ export class ArrivalService {
   getTableToInterface(res : any) : any {    
     let tableMain = []; 
     let tableAir : {[k: string]: string}
-
     for (let val of res.flightStatuses) {  
       tableAir = {}; 
       tableAir.flightNumber = val.carrierFsCode + 
@@ -41,7 +40,7 @@ export class ArrivalService {
   getCity(airports: any, airport: string) : string {
     for (let val of airports) {
       if (val.fs == airport) {
-        return val.name;
+        return val.city;
       }
     }
     return "-";

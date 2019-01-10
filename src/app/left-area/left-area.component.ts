@@ -6,11 +6,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./left-area.component.css']
 })
 export class LeftAreaComponent implements OnInit {
-  @Output() arrivalrace = new EventEmitter(); 
+  @Output() arrivalrace = new EventEmitter();
+  @Output() departurerace = new EventEmitter(); 
   constructor() { }
 
   onArrivalRace() {
     this.arrivalrace.emit();
   }
 
+  onDepartureRace() {
+    this.departurerace.emit();
+  }
 }
