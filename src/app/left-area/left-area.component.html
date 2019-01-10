@@ -1,6 +1,8 @@
 <div class="app-left-area">
-    <input placeholder="SU2105" type="text" [(ngModel)]="race">
-    <button (click)="onSearchRace()">Search</button>
+    <div class="app-search-block">
+        <input placeholder="SU2105" type="text" [(ngModel)]="race">
+        <a (click)="onSearchRace()"><i class="fa fa-2x fa-search"></i></a> 
+    </div>
     <nav>
         <a (click)="onArrivalRace()">Arrival</a>
         <a (click)="onDepartureRace()">Departure</a>

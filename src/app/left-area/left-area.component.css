@@ -66,3 +66,33 @@ nav a:hover {
 nav a:last-child:hover {
     border-bottom: 1px solid #000;
 }
+
+.app-search-block {
+    display: flex;
+    width: 100%;
+    height: 92px;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-search-block input {
+    height: 37px;
+    border-radius: 19px;
+    width: 57%;
+    margin-right: 15px;
+    border: 3px solid grey;
+    outline: none;
+    padding-left: 19px;
+    font-family: 'Righteous', cursive;
+    text-transform: uppercase;
+    color: grey;
+}
+
+.app-search-block i {
+    color: rgb(64,199,129);
+    cursor: pointer;
+}
+
+.app-search-block a i:hover {
+    color: grey;
+}

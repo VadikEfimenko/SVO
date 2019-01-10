@@ -21,7 +21,7 @@ export class AppComponent {
 
   constructor(private arrival: ArrivalService, private http: HttpClient) {}
   arrivalrace() {
-    this.http.get( this.templateGet + '/arr/' + this.date + '?appId=' + this.appId + '&appKey=' + this.appKey + '&utc=true&numHours=1')
+    this.http.get( this.templateGet + '/arr/' + this.date + '?appId=' + this.appId + '&appKey=' + this.appKey + '&utc=true&numHours=1&maxFlights=10')
     .subscribe((response)=>{
       this.response = response;
       this.tableObjectArray = this.arrival.getTableToInterface(this.response);
@@ -29,7 +29,7 @@ export class AppComponent {
   }
 
   departurerace() {
-    this.http.get( this.templateGet + '/dep/' + this.date + '?appId=' + this.appId + '&appKey=' + this.appKey + '&utc=true&numHours=1')
+    this.http.get( this.templateGet + '/dep/' + this.date + '?appId=' + this.appId + '&appKey=' + this.appKey + '&utc=true&numHours=1&maxFlights=10')
     .subscribe((response)=>{
       this.response = response;
       this.tableObjectArray = this.arrival.getTableToInterface(this.response);
@@ -37,7 +37,7 @@ export class AppComponent {
   }
   
   delayrace() {
-    this.http.get( this.templateGet + '/arr/' + this.date + '?appId=' + this.appId + '&appKey=' + this.appKey + '&utc=true&numHours=1')
+    this.http.get( this.templateGet + '/arr/' + this.date + '?appId=' + this.appId + '&appKey=' + this.appKey + '&utc=true&numHours=1&maxFlights=10')
     .subscribe((response)=>{
       this.response = response;
       this.tableObjectArray = this.arrival.getTableDelayToInterface(this.response);
