@@ -6,10 +6,12 @@ import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { ArrivalService } from './arrival.service';
+import { LeftAreaComponent } from './left-area/left-area.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LeftAreaComponent
   ],
   imports: [
     BrowserModule,

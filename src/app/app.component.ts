@@ -13,18 +13,9 @@ export class AppComponent {
   appId: string = "89314f21";
   appKey: string = "414fe9eff2f3a95545eeb4470534a04b";
   response: any;
-  flightNumber: string;
-  flightCarrier: string;
-  cityFrom: string;
-  cityTo: string;
-  timeArrival: string;
-  timeDeparture: string;
-
   tableObjectArray: any;
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
   arrivalrace() {
     this.http.get('https://api.flightstats.com/flex/flightstatus/rest/v2/json/airport/status/SVO/arr/2019/1/9/18?appId=89314f21&appKey=414fe9eff2f3a95545eeb4470534a04b&utc=false&numHours=1&maxFlights=10')
     .subscribe((response)=>{
