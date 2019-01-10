@@ -9,9 +9,6 @@ export class LeftAreaComponent implements OnInit {
   @Output() arrivalrace = new EventEmitter(); 
   constructor() { }
 
-  ngOnInit() {
-  }
-
   onArrivalRace() {
     this.arrivalrace.emit();
   }
