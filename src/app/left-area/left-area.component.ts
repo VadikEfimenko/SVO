@@ -7,7 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class LeftAreaComponent implements OnInit {
   @Output() arrivalrace = new EventEmitter();
-  @Output() departurerace = new EventEmitter(); 
+  @Output() departurerace = new EventEmitter();
+  @Output() delayrace = new EventEmitter(); 
   constructor() { }
 
   onArrivalRace() {
@@ -16,5 +17,9 @@ export class LeftAreaComponent implements OnInit {
 
   onDepartureRace() {
     this.departurerace.emit();
+  }
+
+  onDelayRace() {
+    this.delayrace.emit();
   }
 }

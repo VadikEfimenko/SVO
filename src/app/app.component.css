@@ -10,6 +10,7 @@ app-right-area {
     justify-content: center;
     align-items: center;
     background: #F0EFEF;
+    width: 80%;
     border-right: 1px solid rgb(64,199,129);
 }
 

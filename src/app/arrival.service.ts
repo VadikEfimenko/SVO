@@ -7,9 +7,36 @@ export class ArrivalService {
   response: any;
   obj: any;
 
+  getTableDelayToInterface(res : any) : any {    
+    let tableMain = []; 
+    let tableAir : {[k: string]: string};
+    for (let val of res.flightStatuses) {  
+      tableAir = {}; 
+      tableAir.flightNumber = val.carrierFsCode + 
+                              val.flightNumber;
+      if (val.delays != undefined) {
+        if (val.delays.departureGateDelayMinutes > 15) {
+          tableAir.flightCarrier = this.getCompanies(res.appendix.airlines,
+                                                    val.carrierFsCode);
+          tableAir.cityFrom = this.getCity(res.appendix.airports,
+                                          val.departureAirportFsCode);
+          tableAir.cityTo = this.getCity(res.appendix.airports, 
+                                        val.arrivalAirportFsCode);
+          tableAir.timeArrival = this.getTime(val.arrivalDate.dateUtc);
+
+          tableAir.timeDeparture = this.getTime(val.departureDate.dateUtc);
+      
+          tableMain.push(tableAir);
+        }
+      }
+    }
+    return tableMain;
+  } 
+
   getTableToInterface(res : any) : any {    
     let tableMain = []; 
-    let tableAir : {[k: string]: string}
+    let tableAir : {[k: string]: string};
+    console.log(res)
     for (let val of res.flightStatuses) {  
       tableAir = {}; 
       tableAir.flightNumber = val.carrierFsCode + 
