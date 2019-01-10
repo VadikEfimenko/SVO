@@ -1,5 +1,5 @@
-<!-- <input type="text" [(ngModel)]="userName"> -->
-<app-left-area (arrivalrace)="arrivalrace()"></app-left-area>
-<app-right-area *ngIf="response" [tableObjectArray]="tableObjectArray"></app-right-area>
-
+<main>
+  <app-left-area (arrivalrace)="arrivalrace()"></app-left-area>
+  <app-right-area [response]="response" [tableObjectArray]="tableObjectArray"></app-right-area>
+</main>
 

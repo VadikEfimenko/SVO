@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+
+.app-left-area {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+nav a {
+    display: inline-block;  
+    text-align: center;
+    cursor: pointer;
+    padding: 30px 0;
+    position: relative;
+    font-family: 'Righteous', cursive;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: rgb(64,199,129);
+    border-top: 1px solid;
+}
+
+nav a:last-child {
+    border-bottom: 1px solid rgb(64,199,129);
+}
+
+nav a:before {
+    font: normal normal normal 40px/1 FontAwesome;
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-46%);
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+nav a:first-child:before {
+    content: '\f072';
+    top: 26%!important;
+    transform: rotate(180deg);
+}
+
+nav a:nth-child(2):before {
+    content: '\f072';
+}
+
+nav a:last-child:before {
+    content: '\f06a';
+}
+
+nav a:hover {
+    background: rgb(64,199,129);
+    transition: 0.9s;
+    color: #000;
+    border-top: 1px solid black;
+}
+
+nav a:last-child:hover {
+    border-bottom: 1px solid #000;
+}

@@ -1,0 +1,20 @@
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+app-right-area {
+    flex: 0 0 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F0EFEF;
+    border-right: 1px solid rgb(64,199,129);
+}
+
+app-left-area {
+    display: flex;
+    flex: 0 0 20%;
+    background: #444444;
+}

@@ -6,7 +6,7 @@ import { Component, OnInit, Import, Input } from '@angular/core';
   styleUrls: ['./right-area.component.css']
 })
 export class RightAreaComponent implements OnInit {
-
+  @Input() response: any;
   @Input() tableObjectArray: any;
 
 
